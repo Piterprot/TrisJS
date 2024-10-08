@@ -1,5 +1,10 @@
 let turno = false;
 
+var matrice = [
+    [null, null, null], 
+    [null, null, null],
+    [null, null, null]
+]
 
 function CreoTabella(){
     let table = document.createElement("table");
@@ -24,19 +29,24 @@ function handleCellClick(event) {
   //console.log(`Hai cliccato sulla cella ${event.target.id}`);
   const cell = event.target; 
   
-  if(turno == false){
-    const imgV = document.createElement('img'); 
-    imgV.src = 'V.png'; 
-    imgV.style.width = '100%'; 
-    imgV.style.height = 'auto';
-    cell.appendChild(imgV);  
-    turno = true;  
-  }else{
-    const imgX = document.createElement('img'); 
-    imgX.src = 'X.png'; 
-    imgX.style.width = '100%'; 
-    imgX.style.height = 'auto';
-    cell.appendChild(imgX);    
-    turno = false; 
+  if(cell.children.length == 0 ){
+    if(turno == false){
+        const imgV = document.createElement('img'); 
+        imgV.src = 'V.png'; 
+        imgV.style.width = '100%'; 
+        imgV.style.height = 'auto';
+        cell.appendChild(imgV);  
+        turno = true;  
+      }else{
+        const imgX = document.createElement('img'); 
+        imgX.src = 'X.png'; 
+        imgX.style.width = '100%'; 
+        imgX.style.height = 'auto';
+        cell.appendChild(imgX);    
+        turno = false; 
+      }
+  } else{
+    console.log("La cella è piena")
   }
+ 
 }
