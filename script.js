@@ -85,4 +85,30 @@ function ControlloVincite(){
       alert("Le x hanno vinto");
     }
   }
+  for(let i=0; i < matrice.length; i++){
+    if(matrice[1][i] === true){
+        checkV++;
+    } else if(matrice[01][i] === false){
+      checkX++;
+    }
+
+  if(checkV ===3){
+    alert("Le V hanno vinto");
+  } else if(checkX === 3){
+    alert("Le x hanno vinto");
+  }
+}
+for(let i=0; i < matrice.length; i++){
+  if(matrice[2][i] === true){
+      checkV++;
+  } else if(matrice[2][i] === false){
+    checkX++;
+  }
+
+if(checkV ===3){
+  alert("Le V hanno vinto");
+} else if(checkX === 3){
+  alert("Le x hanno vinto");
+}
+}
 }
