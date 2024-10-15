@@ -88,7 +88,7 @@ function ControlloVincite(){
   for(let i=0; i < matrice.length; i++){
     if(matrice[1][i] === true){
         checkV++;
-    } else if(matrice[01][i] === false){
+    } else if(matrice[1][i] === false){
       checkX++;
     }
 
