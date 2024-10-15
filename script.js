@@ -63,9 +63,26 @@ function handleCellClick(event) {
     console.log("La cella è piena")
   }
  
+  ControlloVincite()
 }
 
 
-function controlloVincite(){
-  
+function ControlloVincite(){
+
+  let checkX = 0; 
+  let checkV = 0; 
+
+  for(let i=0; i < matrice.length; i++){
+      if(matrice[0][i] === true){
+          checkV++;
+      } else if(matrice[0][i] === false){
+        checkX++;
+      }
+
+    if(checkV ===3){
+      alert("Le V hanno vinto");
+    } else if(checkX === 3){
+      alert("Le x hanno vinto");
+    }
+  }
 }
