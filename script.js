@@ -14,7 +14,7 @@ function CreoTabella(){
       let row = document.createElement("tr");
       for (let j = 0; j < 3; j++) {
         let cell = document.createElement("td");
-        cell.id = `cell-${i+1}-${j+1}`; 
+        cell.id = `cell-${i}-${j}`; 
         cell.addEventListener("click", handleCellClick); 
         row.appendChild(cell);
       }
@@ -28,6 +28,9 @@ function CreoTabella(){
 function handleCellClick(event) {
   //console.log(`Hai cliccato sulla cella ${event.target.id}`);
   const cell = event.target; 
+  const eventId = event.target.id;
+
+  var [prep, x, y] = eventId.split('-'); 
   
   if(cell.children.length == 0 ){
     if(turno == false){
@@ -37,6 +40,12 @@ function handleCellClick(event) {
         imgV.style.height = 'auto';
         cell.appendChild(imgV);  
         turno = true;  
+        matrice[x][y] = true;
+         console.log(`Hai cliccato sulla cella ${x} - ${y}`);
+
+         // DEBUG
+         console.log(matrice.toString());
+
       }else{
         const imgX = document.createElement('img'); 
         imgX.src = 'X.png'; 
@@ -44,9 +53,19 @@ function handleCellClick(event) {
         imgX.style.height = 'auto';
         cell.appendChild(imgX);    
         turno = false; 
+        matrice[x][y] = false;
+       console.log(`Hai cliccato sulla cella ${event.target.id}`);
+
+         // DEBUG
+         console.log(matrice.toString());
       }
   } else{
     console.log("La cella è piena")
   }
  
+}
+
+
+function controlloVincite(){
+  
 }
